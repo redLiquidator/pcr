@@ -8,3 +8,6 @@ h2 info source: https://howtodoinjava.com/spring-boot2/h2-database-example/
 
 h2 error: either pre-create it or allow remote database creation 
 			-> refer to this url | https://beemiel.tistory.com/8
+spring security issue: after login(user: jinjoo), page is directed to localhost:8080	
+spring security issue: only one user info is registered into appication.properties
+		
