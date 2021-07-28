@@ -1,0 +1,10 @@
+pcr info source url: https://www.genome.gov/about-genomics/fact-sheets/Polymerase-Chain-Reaction-Fact-Sheet
+access to h2 console: http://localhost:8080/h2-console
+h2 info source: https://howtodoinjava.com/spring-boot2/h2-database-example/
+
+
+
+
+
+h2 error: either pre-create it or allow remote database creation 
+			-> refer to this url | https://beemiel.tistory.com/8

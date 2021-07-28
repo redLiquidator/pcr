@@ -1,0 +1,3 @@
+INSERT INTO DNA (id,single_strand, location_of_3, location_of_5, creation_date) VALUES (1,'GTATTACCCTAGTAATAGCGCCCGCTATGTACCACCTCTG', 'GTATT', 'CTCTG', now());
+INSERT INTO DNA (id,single_strand, location_of_3, location_of_5, creation_date) VALUES (2,'CTAGTAATACCCTAGTACTATGTAAATAGCGCTATGGTAA', 'CTAGT', 'GGTAA', now());
+INSERT INTO DNA (id,single_strand, location_of_3, location_of_5, creation_date) VALUES (3,'CCGCTATACCCTTTACCCGTACCGTAAAGTAATGCGCT', 'CGCTA', 'GCGCT', now()); 

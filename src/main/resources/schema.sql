@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS DNA;
+  
+CREATE TABLE DNA (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  single_strand VARCHAR(250) NOT NULL,
+  location_of_3 VARCHAR(250) NOT NULL,
+  location_of_5 VARCHAR(250) NOT NULL,
+  creation_date TIME DEFAULT NULL
+);
