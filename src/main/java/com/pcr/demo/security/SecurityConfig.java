@@ -18,8 +18,8 @@ import org.springframework.security.web.context.AbstractSecurityWebApplicationIn
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 @Autowired
 DataSource dataSource;
-
-
+// localhost:8080/logout   | logout
+// localhost:8080/login    | login 
 @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // it will check or tell us , what are the users, their passwords, and roles
@@ -53,6 +53,7 @@ DataSource dataSource;
 	//when access denied, browser show 403 
 	 http.csrf().disable()    //disable it if the application users did not use it from browsers.
 	 			.authorizeRequests()
+	 			.antMatchers("/","static/css","static/js").permitAll()   //allow anybody access to these css&js files irrespective of spring security
 	 			.antMatchers("/**").hasRole("ADMIN")  //people who has user role can access all pages
 				//.antMatchers("/**").hasAnyRole()  //all the people can access all pages
 				//.antMatchers("/admin").hasRole("ADMIN")
