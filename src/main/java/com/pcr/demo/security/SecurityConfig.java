@@ -27,7 +27,7 @@ DataSource dataSource;
 	    //set id & pw in application.properties
 	    //AuthenticationManagerBuilder not resolved error -> security dependency3,4 added -> fixed
 	    //java.lang.NoClassDefFoundError: org/springframework/security/converter/RsaKeyConverters -> security dependency3 version deleted -> fixed
-        //authentication
+        //authentication register using config file
 	 	auth.inMemoryAuthentication()
                 .withUser("manish")
                 .password("123")
@@ -36,9 +36,9 @@ DataSource dataSource;
                 .withUser("Jinjoo")
                 .password("1234")
                 .roles("ADMIN");
-
-        //auth.jdbcAuthentication()
-        //        .dataSource(dataSource);
+	 	//authentication register using database
+        auth.jdbcAuthentication()
+                 .dataSource(dataSource);
     }
  //password hashing
  @Bean
