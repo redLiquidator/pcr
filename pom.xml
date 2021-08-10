@@ -47,6 +47,29 @@
 	        <groupId>org.springframework.boot</groupId>
 	        <artifactId>spring-boot-starter-jdbc</artifactId>
    		 </dependency>
+   		 
+   		 		  <!--  spring security1 --> 
+   		 <dependency>
+			  <groupId>org.springframework.boot</groupId>
+			  <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		  <!--  spring security2 --> 
+		<dependency>
+			  <groupId>org.springframework.security</groupId>
+			  <artifactId>spring-security-test</artifactId>
+			  <scope>test</scope>
+		</dependency>
+		 <!--  spring security3 --> 
+		<dependency>
+	          <groupId>org.springframework.security</groupId>
+	          <artifactId>spring-security-web</artifactId>
+   		 </dependency>
+   		 <!--  spring security4 --> 
+   		  <dependency>
+			   <groupId>org.springframework.security</groupId>
+			   <artifactId>spring-security-core</artifactId>
+		  </dependency>
+		 
 
 		  <!--  Jedis (i.e. springboot Redis) --> 
 		  <dependency>

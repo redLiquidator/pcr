@@ -21,6 +21,10 @@ public class FrontPageController {
 		System.out.println("FrontPageController>front");
 	    //assign index.html file to mv
 	    ModelAndView mv = new ModelAndView("front.html");
+	    
+	    WeatherApiController weatherApiController = new WeatherApiController();
+	    mv.addObject("todayWeather",weatherApiController.getTodayWeather());
+	    
 		return mv;
 		}
 		

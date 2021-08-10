@@ -1,8 +1,29 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 <head>
-<title>PCR</title>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+	<title>PCR</title>
+    <style>
+    </style>
+
+
 </head>
+<script th:inline="javascript">
+	
+	//fires as soon as the page's DOM is ready (doesn't wait for images, etc.).
+	$( document ).ready(function() {
+		console.log("$( document ).ready");
+		const todayWeather = [[${todayWeather}]];
+		
+	});
+	
+
+</script>
 <body>
 
 <p>enter a sequence of one dna strand</p>
@@ -11,6 +32,9 @@
 <a href="/admin">go to admin page</a>
 <br>
 <a href="/user">go to user's mypage</a>
+<section>
+<span>now |</span> <span>temp</span> <span>weather</span> <span>city</span> 
+</section>
 
 </body>
 </html>
