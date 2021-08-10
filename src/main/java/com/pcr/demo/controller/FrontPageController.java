@@ -23,7 +23,8 @@ public class FrontPageController {
 	    ModelAndView mv = new ModelAndView("front.html");
 	    
 	    WeatherApiController weatherApiController = new WeatherApiController();
-	    mv.addObject("todayWeather",weatherApiController.getTodayWeather());
+	    System.out.println(weatherApiController.getTodayWeather());
+	    // mv.addObject("todayWeather",weatherApiController.getTodayWeather());
 	    
 		return mv;
 		}
