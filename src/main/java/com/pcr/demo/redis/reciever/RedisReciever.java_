@@ -1,0 +1,23 @@
+package com.pcr.demo.redis.reciever;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.redis.connection.Message;
+import org.springframework.data.redis.connection.MessageListener;
+
+//redis is in-memory data so it is very fast
+//install redis at home and do the test! redis.io/download
+//redis-cli monitor
+//localhost:8080/redis?redis=welcome to simple programming //sending message to redis queue
+//resource: youtube | springboot with redis (by simple programming)
+public class RedisReciever implements MessageListener{
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(RedisReciever.class);
+	
+	//it will listen to message
+	@Override
+	public void onMessage(Message message, byte[] pattern) {
+		LOGGER.info("Received data "+ message.toString()+" from Topic "+ new String(pattern));
+	}
+
+}
