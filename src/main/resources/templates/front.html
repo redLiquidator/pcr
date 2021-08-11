@@ -5,21 +5,24 @@
     <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+   <!--  <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>-->
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/style.default.css}" />
 	<title>PCR</title>
     <style>
     </style>
 
 
 </head>
-<script th:inline="javascript">
-	
+<script th:inline="javascript">	
 	//fires as soon as the page's DOM is ready (doesn't wait for images, etc.).
 	$( document ).ready(function() {
 		console.log("$( document ).ready");
-		const todayWeather = [[${todayWeather}]];
-		console.log(todayWeather);
+		//const todayWeather = [[${todayWeather}]];
+		//console.log(todayWeather);
 		
 	});
 	
@@ -35,6 +38,8 @@
 <a href="/user">go to user's mypage</a>
 <section>
 <span>now |</span> <span>temp</span> <span>weather</span> <span>city</span> 
+<!--<span th:text="${todayWeather}"></span><br/>-->
+<!--<span th:text="${test}"></span><br/>-->
 </section>
 
 </body>

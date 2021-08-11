@@ -1,18 +1,21 @@
 package com.pcr.demo.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@RestController
 public class FrontPageController {
 
 	    //fetch the front page
@@ -24,10 +27,13 @@ public class FrontPageController {
 	    
 	    WeatherApiController weatherApiController = new WeatherApiController();
 	    System.out.println(weatherApiController.getTodayWeather());
-	    // mv.addObject("todayWeather",weatherApiController.getTodayWeather());
-	    
+	     mv.addObject("todayWeather",weatherApiController.getTodayWeather());
+	     mv.addObject("test", "hitest");
+		 
 		return mv;
 		}
+		
+	
 		
 		 //fetch the admin page
 		@GetMapping("/admin")     
