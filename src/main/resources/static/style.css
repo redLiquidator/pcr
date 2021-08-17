@@ -1,0 +1,18 @@
+html{
+	padding:   30px;
+}
+.container {
+	display:flex;
+}
+
+.main {
+	flex-basis: 70%;
+}
+
+.flex {
+  	flex-basis: 30%;
+}
+
+.now-value {
+	color:#596D6A;
+}

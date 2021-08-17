@@ -9,8 +9,9 @@
      
    <!--  <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>-->
-	<link rel="stylesheet" type="text/css" th:href="@{~/css/bootstrap.min.css}" />
-	<link rel="stylesheet" type="text/css" th:href="@{~/css/style.default.css}" />
+
+	<link rel="stylesheet" th:href="@{/style.css}" />
+	<script th:src="@{/script.js}"></script>
 	<title>PCR</title>
     <style>
     </style>
@@ -28,43 +29,57 @@
 </script>
 
 <body>
-<div class="preparation">
-	<p>preparation step</p>
-	<p><button>run</button> 1.create a sequence of dna. Enter the length of dna you want to get</p>
-	<p></p>
-	<p><button>run</button> 2.search a primer whose sequence coincides with part of the dna you created.</p>
-	     if there's no primer, you can create your own primer
-	<p><button>run</button>  3.now the system brings polymerase enzyme & buffer
-</div>
-
-<div class="preparation-result">
-	<p>Preparation step completed. Run the pcr process</p> 
-</div>
-
-<div class="pcr">
-	<p>pcr process</p>
-	<p><button>run</button> 1.denaturation</p>
-	<p><button>run</button> 2.annealing</p>
-	<p><button>run</button> 3.extension</p>
-
-</div>
-
-<div class="pcr-result">
-	<p>PCR process completed</p>
-	<p>-------The result-------</p>
-</div>
-
-<div class="goto-page">
-	<a href="/admin">go to admin page</a>
-	<br>
-	<a href="/user">go to user's mypage</a>
-</div>
-
-<div class="now">
-	<span>now |</span> <span>temp</span> <span>weather</span> <span>city</span> 
-	<span th:text="${todayWeather}"></span><br/>
-	<span th:text="${test}"></span><br/>
-</div>
+<div class="container">	
+	<div class="main">
+		<div class="preparation">
+			<p><strong>preparation step</strong></p>
+			<p><button id="prep1">run</button> 1.create a sequence of dna. Enter the length of dna you want to get</p>
+			<p></p>
+			<p><button id="prep2">run</button> 2.search a primer whose sequence coincides with part of the dna you created.</p>
+			     if there's no primer, you can create your own primer
+			<p><button id="prep3">run</button>  3.now the system brings polymerase enzyme & buffer
+		</div>
+		
+		<div class="preparation-result">
+			<p>Preparation step completed. Run the pcr process</p> 
+		</div>
+		
+		<div class="pcr">
+			<p><strong>pcr process</strong></p>
+			<p><button id="pcr1">run</button> 1.denaturation</p>
+			<p><button id="pcr2">run</button> 2.annealing</p>
+			<p><button id="pcr3">run</button> 3.extension</p>
+		</div>
+		
+		<div class="pcr-result">
+			<p>PCR process completed</p>
+			<p>-------The result-------</p>
+		</div>
+		
+	</div>
+	
+	<div class="side">	
+	    <div class="login">
+			<p><strong>login info</strong></p>
+			<span>id</span>&nbsp
+			<span>logout</span>&nbsp
+			<span>signout</span>&nbsp
+		</div>
+		<br>	
+		<div class="now">
+			<p><strong>now</strong></p>
+			<span>temp</span>&nbsp<span class="now-value" th:text="${todayWeather.main.temp}"></span>
+			<span>weather</span>&nbsp<span class="now-value" th:text="${todayWeather.weather[0].description}"></span>
+			<span>city</span>&nbsp<span class="now-value" th:text="${todayWeather.name}"></span>
+		</div>
+		<br>
+		<div class="goto-page">
+			<a href="/admin">go to admin page</a>
+			<br>
+			<a href="/user">go to user's mypage</a>
+		</div>
+	</div>
+</div>		
 
 </body>
 </html>

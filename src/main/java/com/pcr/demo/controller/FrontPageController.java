@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pcr.demo.UserRepositoryCommandLineRunner;
+import com.pcr.demo.entity.DnaSequence;
 import com.pcr.demo.entity.User;
 import com.pcr.demo.service.UserRepository;
 
@@ -45,14 +46,14 @@ public class FrontPageController {
 		      Object todayWeather = weatherApiController.getTodayWeather();  //todayWeather is linkedHashMap
 		      System.out.println("before data transform: "+todayWeather);
 		      
-		      ObjectMapper mapper = new ObjectMapper();
-		      String json = mapper.writeValueAsString(todayWeather); // (jackson) object->json
-		      System.out.println("after data transform: "+ json.getClass().getSimpleName());
+		      //ObjectMapper mapper = new ObjectMapper();
+		      //String json = mapper.writeValueAsString(todayWeather); // (jackson) object->json this json doesn't work in this case
+		      //System.out.println("after data transform: "+ json.getClass().getSimpleName()); 
 		      
-		      mv.addObject("todayWeather",weatherApiController.getTodayWeather());
+		      mv.addObject("todayWeather",todayWeather);
 		      mv.addObject("test", "hitest");
-			 
-		      return mv;
+	
+		     return mv;
 		}
 		
 	
@@ -74,6 +75,8 @@ public class FrontPageController {
 			ModelAndView mv = new ModelAndView("user.html");
 			return mv;
 		}
+		
+
 			
 		//Using Jedis(springboot Redis), set DnaSequence&its creation date&its length 
 		//DnaSequence is acquired through RestService (from the Github Prject name 'consumeRestService')
