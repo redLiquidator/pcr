@@ -3,6 +3,8 @@ package com.pcr.demo.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -22,11 +24,9 @@ public class PreparationController {
 	
 	private static String getDnaSequence_url = "http://localhost:8088/dna/v1/dnaSequence/";
 	
-	
-	
-
-	@RequestMapping(value="/prep1/{dnaLength}")
-	public DnaSequence getDnaSequence(@PathVariable final int dnaLength) {
+	//ajax call from front.html
+	@RequestMapping(method = RequestMethod.GET, path = "/prep1") 
+	public DnaSequence getDnaSequence(@RequestParam final int dnaLength) {
 		System.out.println("prep1");
 		//get dna sequence by its length through restTemplate 
 		//from consumeRestService project	
@@ -34,6 +34,14 @@ public class PreparationController {
 		DnaSequence dnaSequence =restTemplate.getForObject(getDnaSequence_url+dnaLength,DnaSequence.class);
 	
 		return dnaSequence;
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, path = "/test") 
+	public String test(@RequestParam int dnaLength) {
+		System.out.println("test===");
+		System.out.println(dnaLength);
+	
+		return "testvvv";
 	}
 	
 }
