@@ -1,9 +1,7 @@
 pcr info source url: https://www.genome.gov/about-genomics/fact-sheets/Polymerase-Chain-Reaction-Fact-Sheet
-access to h2 console: http://localhost:8080/h2-console
+access to h2 console: http://localhost:8080/h2
 h2 info source: https://howtodoinjava.com/spring-boot2/h2-database-example/
 pcr primer list: https://www.jimmunol.org/content/jimmunol/suppl/2011/07/22/jimmunol.1100468.DC1/Tab1.pdf
-
-
 
 
 

@@ -33,7 +33,7 @@ DataSource dataSource;
                 .password("123")
                 .roles("USER")
                 .and()
-                .withUser("Jinjoo")
+                .withUser("benjamin")
                 .password("1234")
                 .roles("ADMIN");
 	 	//authentication register using database
@@ -53,13 +53,15 @@ DataSource dataSource;
 	//when access denied, browser show 403 
 	 http.csrf().disable()    //disable it if the application users did not use it from browsers.
 	 			.authorizeRequests()
-	 			.antMatchers("/","static/css","static/js").permitAll()   //allow anybody access to these css&js files irrespective of spring security
-	 			.antMatchers("/**").hasRole("ADMIN")  //people who has user role can access all pages
-				//.antMatchers("/**").hasAnyRole()  //all the people can access all pages
+	 			//.antMatchers("/**").hasAnyRole()  //all the people can access all pages
+	 			//.antMatchers("/","static/css","static/js").permitAll()   //allow anybody access to these css&js files irrespective of spring security
+	 			//.antMatchers("/**").hasRole("ADMIN")  //people who has user role can access all pages
 				//.antMatchers("/admin").hasRole("ADMIN")
-	 			.antMatchers("/user").hasRole("USER")
+	 			//.antMatchers("/user").hasRole("USER")
 	 			//.antMatchers("/front").hasAnyRole("ADMIN","USER")
-	 			//.antMatchers("/**").permitAll()	
-	 			  .and().formLogin();
+	 			.antMatchers("/**").permitAll()	
+	 			 .and().formLogin();
+	 
+	 http.headers().frameOptions().disable();  //enable h2 console access
  }
  }
