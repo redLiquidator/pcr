@@ -2,13 +2,12 @@
 
 let prep1 = document.querySelector("#prep1");
 
-
 //call PreparationController.getDnaSequence()
 prep1.addEventListener("click", ()=>{
-	console.log("console.log(test)");
+	console.log("prep1"+prep1);
 
 	$.get("/prep1", 
-			{ dnaLength: 10 }, 
+			{ dnaLength: $('#dLength').val()}, 
 			// 서버가 필요한 정보를 같이 보냄. 
 			function(data, status) { 
 				console.log(data);

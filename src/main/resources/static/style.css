@@ -7,10 +7,12 @@ html{
 
 .main {
 	flex-basis: 70%;
+	padding:0.01rem;
 }
 
-.flex {
+.side {
   	flex-basis: 30%;
+	padding:0.01rem;
 }
 
 .now-value {
