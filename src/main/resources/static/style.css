@@ -18,3 +18,8 @@ html{
 .now-value {
 	color:#596D6A;
 }
+
+#prep1-result-one, #prep1-result-another {
+	margin-left:30px;
+	color:#454545;
+}
