@@ -32,29 +32,39 @@
 <div class="container">	
 	<div class="main">
 		<div class="preparation">
-
 			<p><strong>preparation step</strong></p>
 			<p><button id="prep1">run</button> 1.create a sequence of dna. Enter the length of dna you want to get: 		
-			<input id="dLength" name="dLength" placeholder="ex.23" size="4"> </p>
-			<p>The following dna has been created now...</p>
-			<p id="prep1-result-one"></p>
+			<input id="dLength" name="dLength" placeholder="ex.23" size="4" value="15"> </p>
+			<p id="notice1">The following dna has been created now...</p>
+			<p id="prep1-result-one" class="prep1-result"></p>
 			<p id="prep1-result-another"></p>
 			
 			<p></p>
-			<p><button id="prep2">run</button> 2.search a primer whose sequence coincides with part of the dna you created.</p>
-			     if there's no primer, you can create your own primer
-			<p>3.now the system brings polymerase enzyme & buffer
+			<div id="prep2-container">
+				<div id="prep2-subcontainer1">
+				<p><button id="prep2">run</button> 2.click the starting point(base) of extension on the two complementary strands below. 
+													We will find suitable primers.
+				</div>
+				<div id="prep2-subcontainer2">
+					<p>you clicked the above base G. Do you really want this base to be the starting point of extension? 
+					<button id="yes">yes</button>
+					<button id="no">no</button></p>
+				</div>
+				<div id="prep2-subcontainer3">
+					<p>We found an compatible primer TP34 from our database.</p>
+					<p>3.now the system brings polymerase enzyme & buffer...
+					<p>Preparation step completed. Run the pcr process</p> 
+				</div>
+			</div>
+			
 		</div>
-		
-		<div class="preparation-result">
-			<p>Preparation step completed. Run the pcr process</p> 
-		</div>
+
 		
 		<div class="pcr">
 			<p><strong>pcr process</strong></p>
 			<p><button id="pcr1">run</button> 1.denaturation</p>
-			<p><button id="pcr2">run</button> 2.annealing</p>
-			<p><button id="pcr3">run</button> 3.extension</p>
+			<p> 2.annealing</p>
+			<p> 3.extension</p>
 		</div>
 		
 		<div class="pcr-result">
