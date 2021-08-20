@@ -25,7 +25,12 @@ html{
 	font-size:20px;
 }
 
-.preparation-result, #notice1, #prep2-subcontainer1, #prep2-subcontainer2, #prep2-subcontainer3 {
+.preparation-result, #notice1, #prep2-subcontainer1, #prep2-subcontainer2, #prep2-subcontainer3-yes, #prep2-subcontainer3-no {
 	display:none;
+}
+
+#base-upperstrand, #base-upperstrand {
+	font-weight:bold;
+	color: #7D3C98;
 }
 

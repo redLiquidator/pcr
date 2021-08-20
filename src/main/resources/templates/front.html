@@ -42,18 +42,23 @@
 			<p></p>
 			<div id="prep2-container">
 				<div id="prep2-subcontainer1">
-				<p><button id="prep2">run</button> 2.click the starting point(base) of extension on the two complementary strands below. 
+				<p><button id="prep2">run</button> 2.click the starting point(base) of extension on the two strands above. 
 													We will find suitable primers.
 				</div>
 				<div id="prep2-subcontainer2">
-					<p>you clicked the above base G. Do you really want this base to be the starting point of extension? 
+					<p>You clicked the base <span id="base-upperstrand"></span> on Upper Strand . 
+					<p>You clicked the base <span id="base-lowerstrand"></span> on Lower Strand.
+					<p>Do you really want this base to be the starting point of extension?</p> 
 					<button id="yes">yes</button>
 					<button id="no">no</button></p>
 				</div>
-				<div id="prep2-subcontainer3">
-					<p>We found an compatible primer TP34 from our database.</p>
-					<p>3.now the system brings polymerase enzyme & buffer...
+				<div id="prep2-subcontainer3-yes">
+					<p>We found an compatible primer <span></span> from our database as below</p>
+					<p>now the system brings the polymerase enzyme & buffers...
 					<p>Preparation step completed. Run the pcr process</p> 
+				</div>
+				<div id="prep2-subcontainer3-no">
+					<p>click another starting point(base) of extension</p>
 				</div>
 			</div>
 			
