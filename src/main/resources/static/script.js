@@ -1,3 +1,6 @@
+let seq;
+let primerSeq;
+
 //on clicking, get the position&base
 $('#prep1-result-one').click( function () {
   getSelectionPosition (); 
@@ -11,6 +14,11 @@ function getSelectionPosition () {
   let nth = selection.focusOffset - 18;
   $("#base-upperstrand").html(selection.focusNode.data[selection.focusOffset]+'  ( '+nth+'th base)  '); 
   
+  let start = nth-1;
+      primerSeq = seq.substr(start,3);	
+  //get primer sequence
+  console.log('primer for Upper Strand: index '+start+", "+primerSeq);  //substr(start, length)
+
 }
 
 //selector
@@ -24,12 +32,14 @@ prep1.addEventListener("click", ()=>{
 	//call PreparationController.getDnaSequence()
 	$.get("/prep1", 
 			{ dnaLength: $('#dLength').val()}, 
-			// 서버가 필요한 정보를 같이 보냄. 
 			function(data, status) { 
 				console.log(data);
 				console.log(status);
-				let seq = data.sequence;
-				$("#prep1-result-one").html('Upper Strand :  3\'-'+seq+'-5\''); 
+				seq = data.sequence;
+				
+				$("#prep1-result-one").html('Upper Strand :  3\'-'+seq[0].fontcolor("red")+'-5\''); 
+				//
+
 				
 				//get a complementary strand of prep1-result-one
 				let complementarySeq = "";
@@ -58,6 +68,7 @@ prep1.addEventListener("click", ()=>{
 prep2.addEventListener("click", ()=>{
 	 console.log("prep2 starts");
 	 $('#prep2-subcontainer2').show();
+	 getSelectionPosition ();
 	});	
 
 yes.addEventListener("click", ()=>{
@@ -65,7 +76,21 @@ yes.addEventListener("click", ()=>{
 	 $('#prep2-subcontainer3-yes').show();
 	 $('#prep2-subcontainer3-no').hide();
 	 
-	 //search the compatible primer
+	 //search the compatible primer from database
+	 console.log('primerSeq : '+primerSeq);
+	 console.log('primer database search starts..');
+	 
+	 //call PreparationController.primerSearch()
+	 $.get("/primerSearch", 
+				{ primerSequence : primerSeq}, 
+				// 서버가 필요한 정보를 같이 보냄. 
+				function(data, status) { 
+					console.log('ajax request : PreparationController.primerSearch()');
+					console.log(data);
+					console.log(status);
+				
+				} ); 
+	 
 	  
 	});
 	

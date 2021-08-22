@@ -32,7 +32,7 @@
 <div class="container">	
 	<div class="main">
 		<div class="preparation">
-			<p><strong>preparation step</strong></p>
+			<h2>preparation step</h2>
 			<p><button id="prep1">run</button> 1.create a sequence of dna. Enter the length of dna you want to get: 		
 			<input id="dLength" name="dLength" placeholder="ex.23" size="4" value="15"> </p>
 			<p id="notice1">The following dna has been created now...</p>
@@ -66,12 +66,12 @@
 
 		
 		<div class="pcr">
-			<p><strong>pcr process</strong></p>
+			<h2>pcr process</h2>
 			<p><button id="pcr1">run</button> 1.denaturation</p>
 			<p> 2.annealing</p>
 			<p> 3.extension</p>
 		</div>
-		
+		 
 		<div class="pcr-result">
 			<p>PCR process completed</p>
 			<p>-------Result Board-------</p>
@@ -81,14 +81,14 @@
 	
 	<div class="side">	
 	    <div class="login">
-			<p><strong>login info</strong></p>
+			<h2>login info</h2>
 			<span>id</span>&nbsp
 			<span>logout</span>&nbsp
 			<span>signout</span>&nbsp
 		</div>
 		<br>	
 		<div class="now">
-			<p><strong>now</strong></p>
+			<h2>now</h2>
 			<span>temp</span>&nbsp<span class="now-value" th:text="${todayWeather.main.temp}"></span>
 			<span>weather</span>&nbsp<span class="now-value" th:text="${todayWeather.weather[0].description}"></span>
 			<span>city</span>&nbsp<span class="now-value" th:text="${todayWeather.name}"></span>
@@ -96,7 +96,7 @@
 		<br>
 		<div class="goto-page">
 			<a href="/admin">go to admin page</a>
-			<br>
+			
 			<a href="/user">go to user's mypage</a>
 		</div>
 	</div>

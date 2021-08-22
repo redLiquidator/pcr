@@ -2,7 +2,7 @@ package com.pcr.demo.entity;
 
 import java.util.Date;
 
-public class DnaSequence {
+public class Dna {
 	private String sequence;
 	private Date creationDate;
 	public String getSequence() {

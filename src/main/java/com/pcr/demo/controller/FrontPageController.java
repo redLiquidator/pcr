@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pcr.demo.UserRepositoryCommandLineRunner;
-import com.pcr.demo.entity.DnaSequence;
+import com.pcr.demo.entity.Dna;
 import com.pcr.demo.entity.User;
 import com.pcr.demo.service.UserRepository;
 

@@ -1,8 +1,41 @@
+* {
+	   font-family: "Lucida Console", "Courier New", monospace;
+}
+
 html{
 	padding:   30px;
 }
+
 .container {
 	display:flex;
+}
+
+body {
+	background-color:#B6B6B6;
+}
+
+button {
+   background-color:#e7e7e7;
+   border: none;
+   color: black;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+   text-transform: uppercase;
+   cursor: pointer;
+}
+
+button:hover{
+	background-color: black;
+	color:white;
+}
+
+#prep1-result-one{
+	color: red;
 }
 
 .main {
@@ -32,5 +65,39 @@ html{
 #base-upperstrand, #base-upperstrand {
 	font-weight:bold;
 	color: #7D3C98;
+}
+
+h2 {
+	font-weight:bold;
+	font-size:3rem;
+	text-transform:uppercase;
+}
+
+input {
+	padding: 10px 10px;
+	font-size: 15px;
+}
+
+.prep1-result {
+	color: green;	
+}
+
+.goto-page a{
+	background-color:#e7e7e7;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.goto-page a:hover{
+	background-color: black;
+	color: white;
 }
 

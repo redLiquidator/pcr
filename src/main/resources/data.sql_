@@ -1,6 +1,6 @@
-INSERT INTO USERS(username,password,enabled) VALUES('user','pass',true);
-INSERT INTO USERS(username,password,enabled) VALUES('admin','pass',true);
-INSERT INTO USERS(username,password,enabled) VALUES('white','white',true);
+INSERT INTO USERS(id,username,password,enabled) VALUES(1,'tester1','1234',true);
+INSERT INTO USERS(id,username,password,enabled) VALUES(2,'tester2','1234',true);
+INSERT INTO USERS(id,username,password,enabled) VALUES(3,'tester3','1234',true);
 
 INSERT INTO AUTHORITIES(username,authority) VALUES('user','ROLE_USER');
 INSERT INTO AUTHORITIES(username,authority) VALUES('admin','ROLE_ADMIN');
@@ -64,27 +64,3 @@ INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (48,'S
 INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (49,'SAMPLE40','5-GCT-3', now(), 'bejamin' );
 INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (50,'SAMPLE41','5-GGA-3', now(), 'bejamin' );
 INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (51,'SAMPLE42','5-GGC-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (52,'SAMPLE43','5-GGG-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (53,'SAMPLE44','5-GGT-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (54,'SAMPLE45','5-GTA-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (55,'SAMPLE46','5-GTC-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (56,'SAMPLE47','5-GTG-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (57,'SAMPLE48','5-GTT-3', now(), 'bejamin' );
-
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (58,'SAMPLE49','5-TAA-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (59,'SAMPLE50','5-TAC-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (60,'SAMPLE51','5-TAG-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (61,'SAMPLE52','5-TAT-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (62,'SAMPLE53','5-TCA-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (63,'SAMPLE54','5-TCC-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (64,'SAMPLE55','5-TCG-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (65,'SAMPLE56','5-TCT-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (66,'SAMPLE57','5-TGA-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (67,'SAMPLE58','5-TGC-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (68,'SAMPLE59','5-TGG-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (69,'SAMPLE60','5-TGT-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (70,'SAMPLE61','5-TTA-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (71,'SAMPLE62','5-TTC-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (72,'SAMPLE63','5-TTG-3', now(), 'bejamin' );
-INSERT INTO PRIMER (id, name, sequence, creation_date, created_by) VALUES (73,'SAMPLE64','5-TTT-3', now(), 'bejamin' );
-

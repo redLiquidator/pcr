@@ -9,10 +9,23 @@ import javax.persistence.Id;
 public class User {
 	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	private String name;
 	private String role;
-	public long getId() {
+	private boolean enabled;
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
 		return id;
 	}
 
