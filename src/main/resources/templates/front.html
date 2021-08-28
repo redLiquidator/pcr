@@ -22,6 +22,8 @@
 	//fires as soon as the page's DOM is ready (doesn't wait for images, etc.).
 	$( document ).ready(function() {
 		console.log("$( document ).ready");
+		
+
 		//const todayWeather = [[${todayWeather}]];
 		//console.log(todayWeather);
 		
@@ -32,7 +34,7 @@
 <div class="container">	
 	<div class="main">
 		<div class="preparation">
-			<h2>preparation step</h2>
+			<h3>preparation step</h3>
 			<p><button id="prep1">run</button> 1.create a sequence of dna. Enter the length of dna you want to get: 		
 			<input id="dLength" name="dLength" placeholder="ex.23" size="4" value="15"> </p>
 			<p id="notice1">The following dna has been created now...</p>
@@ -66,7 +68,7 @@
 
 		
 		<div class="pcr">
-			<h2>pcr process</h2>
+			<h3>pcr process</h3>
 			<p><button id="pcr1">run</button> 1.denaturation</p>
 			<p> 2.annealing</p>
 			<p> 3.extension</p>
@@ -81,14 +83,14 @@
 	
 	<div class="side">	
 	    <div class="login">
-			<h2>login info</h2>
+			<h3>login info</h3>
 			<span>id</span>&nbsp
 			<span>logout</span>&nbsp
 			<span>signout</span>&nbsp
 		</div>
 		<br>	
 		<div class="now">
-			<h2>now</h2>
+			<h3>now</h3>
 			<span>temp</span>&nbsp<span class="now-value" th:text="${todayWeather.main.temp}"></span>
 			<span>weather</span>&nbsp<span class="now-value" th:text="${todayWeather.weather[0].description}"></span>
 			<span>city</span>&nbsp<span class="now-value" th:text="${todayWeather.name}"></span>

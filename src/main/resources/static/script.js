@@ -37,9 +37,8 @@ prep1.addEventListener("click", ()=>{
 				console.log(status);
 				seq = data.sequence;
 				
-				$("#prep1-result-one").html('Upper Strand :  3\'-'+seq[0].fontcolor("red")+'-5\''); 
-				//
-
+				//$("#prep1-result-one").html('Upper Strand :  3\'-'+seq[0].fontcolor("red")+'-5\''); 
+				$("#prep1-result-one").html('Upper Strand :  3\'-'+seq+'-5\''); 
 				
 				//get a complementary strand of prep1-result-one
 				let complementarySeq = "";
@@ -91,7 +90,6 @@ yes.addEventListener("click", ()=>{
 				
 				} ); 
 	 
-	  
 	});
 	
 no.addEventListener("click", ()=>{

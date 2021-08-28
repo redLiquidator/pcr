@@ -2,23 +2,45 @@ package com.pcr.demo.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+@Entity (name = "primerEntity")
+@Table (name = "primer")
 public class Primer {
 	  @Id
-	  @GeneratedValue
-	  private int id;
+	  @Column(name="id")
+	  //@GeneratedValue(strategy=GenerationType.AUTO)
+	  //primary key
+	  private long id;
+	  @Column(name="name")
 	  private String name;
+	  @Column(name="sequence")
 	  private String sequence;
+	  @Column(name="creation_date")
 	  private Date creation_date;
+	  @Column(name="created_by")
 	  private String created_by;
-	public int getId() {
+	  
+	public Primer() {
+
+	} 
+	
+	public Primer(long id, String name, String sequence, Date creation_date, String created_by) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sequence = sequence;
+		this.creation_date = creation_date;
+		this.created_by = created_by;
+	}
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -44,8 +66,5 @@ public class Primer {
 	}
 	public void setCreated_by(String created_by) {
 		this.created_by = created_by;
-	}
-	  
-	  
-		
+	}			
 }
