@@ -109,7 +109,7 @@ yes.addEventListener("click", ()=>{
 	 
 	 //call PreparationController.primerSearch()
 	 $.get("/primerSearch", 
-				{ primerSequence : primerSeq}, 
+				{ primerSequence : primerSeq , c_primerSequence : c_primerSeq}, 
 				// 서버가 필요한 정보를 같이 보냄. 
 				function(data, status) { 
 					console.log('ajax request : PreparationController.primerSearch()');

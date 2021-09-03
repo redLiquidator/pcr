@@ -50,8 +50,9 @@ public class PreparationController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/primerSearch")
-	public List<Primer> getPrimer(@RequestParam final String primerSequence) {
+	public List<Primer> getPrimer(@RequestParam final String primerSequence, String c_primerSequence) {
 		logger.info("PreparationController>getPrimer primerSequence is : ",primerSequence);
+		logger.info("PreparationController>getPrimer c_primerSequence is : ",c_primerSequence);
 		
 
 	    Primer primer1 = new Primer(1L,"SAMPLE1","5-AAA-3", new Date(), "bejamin");		      
