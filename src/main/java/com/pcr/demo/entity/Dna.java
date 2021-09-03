@@ -17,4 +17,6 @@ public class Dna {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
+	
+	
 }

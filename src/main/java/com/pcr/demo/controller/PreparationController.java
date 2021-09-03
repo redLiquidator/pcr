@@ -1,5 +1,6 @@
 package com.pcr.demo.controller;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.pcr.demo.entity.Dna;
 import com.pcr.demo.entity.Primer;
-import com.pcr.demo.service.PrimerRepository;
+import com.pcr.demo.repository.PrimerRepository;
 
 
 //the whole PCR process:
@@ -49,31 +50,37 @@ public class PreparationController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, path = "/primerSearch")
-	public Primer getPrimer(@RequestParam final String primerSequence) {
+	public List<Primer> getPrimer(@RequestParam final String primerSequence) {
 		logger.info("PreparationController>getPrimer primerSequence is : ",primerSequence);
 		
 
-	    //Primer primer1 = new Primer(26L,"SAMPLE26","5-CAA-3", new Date(), "bejamin");		      
-	    //primerRepository.save(primer1);
-	    //Primer primer2 = new Primer(27L,"SAMPLE27","5-ACA-3", new Date(), "bejamin");		      
-	    //primerRepository.save(primer2);
+	    Primer primer1 = new Primer(1L,"SAMPLE1","5-AAA-3", new Date(), "bejamin");		      
+	    primerRepository.save(primer1);
+	    Primer primer2 = new Primer(2L,"SAMPLE2","5-AAC-3", new Date(), "bejamin");		      
+	    primerRepository.save(primer2);
+	    Primer primer3 = new Primer(1L,"SAMPLE3","5-AAG-3", new Date(), "bejamin");		      
+	    primerRepository.save(primer3);
+	    Primer primer26 = new Primer(26L,"SAMPLE26","5-AGG-3", new Date(), "bejamin");		      
+	    primerRepository.save(primer26);
+	    
+	    
 	      
 	    logger.info("primerRepository.findAll()");
-        //List<Primer> primerList = primerRepository.findAll();
-	    //logger.info("primerList  : "+primerList);
+        List<Primer> primerList = primerRepository.findAll();
+	    logger.info("primerList  : "+primerList);
+	    for(Primer pr: primerList) {
+	    	System.out.println(pr);
+	    }
 
 	    //find the matching primer by id
 		Optional<Primer> userWithIdOne = primerRepository.findById(26L); 
-		logger.info("primer is retrieved :  " + userWithIdOne);
+		logger.info("primer is retrieved :  " + userWithIdOne.get());
 		
 	    //find the matching primer by subSequence
 	    List<Primer> result = primerRepository.findBySubSequence(primerSequence);
-	    for(Primer pr: result) {
-		    logger.info("pr : ",pr);
-	    }
+	    logger.info("findBySubSequence result : "+result);
 
-
-		return null  ;
+		return result  ;
 	}
 	
 	

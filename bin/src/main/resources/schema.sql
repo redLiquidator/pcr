@@ -1,24 +1,29 @@
-DROP TABLE IF EXISTS DNA;
+CREATE TABLE USERS(
+  id INT not null PRIMARY KEY,	
+  username varchar_ignorecase(500) not null,
+  password varchar_ignorecase(500) not null,
+  enabled boolean	
+);
+
+CREATE TABLE AUTHORITIES(
+  username varchar_ignorecase(500) not null,
+  authority varchar_ignorecase(500) not null
+);
+
+create unique index ix_auth_username on authorities (username,authority);
   
 CREATE TABLE DNA (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   sequence VARCHAR(1000) NOT NULL,
   creation_date TIME DEFAULT NULL,
-  created_by VARCHAR(1000) DEFAULT NULL
-);
-
-CREATE TABLE USER (
-  id INT AUTO_INCREMENT  PRIMARY KEY,
-  name VARCHAR(1000) NOT NULL,
-  email VARCHAR(1000) DEFAULT NULL,
-  authority VARCHAR(1000) DEFAULT NULL
+  created_by VARCHAR(1000) DEFAULT NULL,
+  enabled boolean	
 );
 
 CREATE TABLE PRIMER (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   name VARCHAR(1000) NOT NULL,
   sequence VARCHAR(1000) NOT NULL,
-  use  VARCHAR(1000) DEFAULT NULL,
   creation_date TIME DEFAULT NULL,
   created_by VARCHAR(1000) DEFAULT NULL
 );
@@ -31,3 +36,5 @@ CREATE TABLE PROCESS (
   execution_date TIME DEFAULT NULL,
   executed_by VARCHAR(1000) DEFAULT NULL
 );
+
+

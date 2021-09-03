@@ -66,5 +66,11 @@ public class Primer {
 	}
 	public void setCreated_by(String created_by) {
 		this.created_by = created_by;
+	}
+
+	@Override
+	public String toString() {
+		return "Primer [id=" + id + ", name=" + name + ", sequence=" + sequence + ", creation_date=" + creation_date
+				+ ", created_by=" + created_by + "]";
 	}			
 }

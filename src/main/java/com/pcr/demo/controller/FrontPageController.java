@@ -8,15 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.pcr.demo.service.UserRepository;
 
 @RestController
 public class FrontPageController {
 	
 	private static final Logger log = LoggerFactory.getLogger(FrontPageController.class);
 
-	@Autowired
-	private UserRepository userRepository;
+	//@Autowired
+	//private UserRepository userRepository;
 	
 	    //fetch the front page
 		@GetMapping("/front")     

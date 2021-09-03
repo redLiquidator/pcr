@@ -1,57 +1,33 @@
-let seq; //3-*****-5
-let primerSeq;   
-let complementarySeq = "";   //5-*****-3
+let seq;
+let primerSeq;
 
-//on clicking, get the position & base info
+//on clicking, get the position&base
 $('#prep1-result-one').click( function () {
-	console.log(seq);
-  getSelectionPosition_seq(); 
+  getSelectionPosition (); 
 });
 
-//on clicking, get the position & base info
-$('#prep1-result-another').click( function () {
-	console.log(complementarySeq);
-  getSelectionPosition_complementarySeq();
-});
-
-function getSelectionPosition_seq() {
+function getSelectionPosition () {
   var selection = window.getSelection();
-	  console.log(selection.focusNode.data[selection.focusOffset]);
-	  console.log(selection.focusOffset);
-	 
+  console.log(selection.focusNode.data[selection.focusOffset]);
+  console.log(selection.focusOffset);
+  
   let nth = selection.focusOffset - 18;
   $("#base-upperstrand").html(selection.focusNode.data[selection.focusOffset]+'  ( '+nth+'th base)  '); 
   
   let start = nth-1;
-      primerSeq = seq.substr(start-3,3);	
+      primerSeq = seq.substr(start,3);	
   //get primer sequence
   console.log('primer for Upper Strand: index '+start+", "+primerSeq);  //substr(start, length)
-}
 
-function getSelectionPosition_complementarySeq() {
-	
-  var selection = window.getSelection();
-	  console.log(selection.focusNode.data[selection.focusOffset]);
-	  console.log(selection.focusOffset);
-	 
-  let nth = selection.focusOffset - 18;
-  $("#base-lowerstrand").html(selection.focusNode.data[selection.focusOffset]+'  ( '+nth+'th base)  '); 
-  
-  let start = nth-6;
-      c_primerSeq = complementarySeq.substr(start,3);	
-  //get primer sequence
-  console.log('primer for Template Strand: index '+start+", "+c_primerSeq);  //substr(start, length)
 }
 
 //selector
-const prep1 = document.querySelector("#prep1");
-const yes = document.querySelector("#yes");
-const no = document.querySelector("#no");
-const pcr = document.querySelector("#pcr");
+let prep1 = document.querySelector("#prep1");
+let yes = document.querySelector("#yes");
+let no = document.querySelector("#no");
 
 //1.create a sequence of dna. Enter the length of dna you want to get: 		
 prep1.addEventListener("click", ()=>{	
-	complementarySeq = "";
 	console.log("prep1"+prep1);
 	//call PreparationController.getDnaSequence()
 	$.get("/prep1", 
@@ -62,9 +38,10 @@ prep1.addEventListener("click", ()=>{
 				seq = data.sequence;
 				
 				//$("#prep1-result-one").html('Upper Strand :  3\'-'+seq[0].fontcolor("red")+'-5\''); 
-				$("#prep1-result-one").html('Template Strand :  3\'-'+seq+'-5\''); 
+				$("#prep1-result-one").html('Upper Strand :  3\'-'+seq+'-5\''); 
 				
 				//get a complementary strand of prep1-result-one
+				let complementarySeq = "";
 				for(i=0;i<seq.length;i++){
 					if(seq.charAt(i) == 'C'){
 						complementarySeq += 'G';
@@ -76,8 +53,7 @@ prep1.addEventListener("click", ()=>{
 						complementarySeq += 'A';
 					};
 				}
-
-				$("#prep1-result-another").html('Complementary Strand :  5\'-'+complementarySeq+'-3\''); 		
+				$("#prep1-result-another").html('Lower Strand :  5\'-'+complementarySeq+'-3\''); 		
 			} ); 
 		
 		 //notice1, prep2-container
@@ -111,13 +87,9 @@ yes.addEventListener("click", ()=>{
 					console.log('ajax request : PreparationController.primerSearch()');
 					console.log(data);
 					console.log(status);
-					
-					data.forEach(item => {
-						console.log(item.name+"  "+item.sequence);
-						$("#primer-search-result").html(item.name);
-						$("#primer-search-result").html("primer name : "+item.name+", primer sequence :"+item.sequence);
-					})			
+				
 				} ); 
+	 
 	});
 	
 no.addEventListener("click", ()=>{
@@ -125,12 +97,6 @@ no.addEventListener("click", ()=>{
 	 $('#prep2-subcontainer3-no').show();
 	 $('#prep2-subcontainer3-yes').hide();
 	});		
-
-pcr.addEventListener("click", ()=>{
-	console.log("pcr process starts");
-	//replicate using primer sequence and dna sequence
-	console.log("dna : 5-"+seq+"-3");
-	console.log("primer : 5-"+primerSeq+"-3");
-});	
+	
 	
 

@@ -1,0 +1,44 @@
+/*
+ * package com.pcr.demo.controller;
+ * 
+ * import org.springframework.beans.factory.annotation.Autowired; import
+ * org.springframework.cache.annotation.Cacheable; import
+ * org.springframework.web.bind.annotation.GetMapping; import
+ * org.springframework.web.bind.annotation.PathVariable; import
+ * org.springframework.web.bind.annotation.PostMapping; import
+ * org.springframework.web.bind.annotation.RequestBody; import
+ * org.springframework.web.bind.annotation.RequestMapping; import
+ * org.springframework.web.bind.annotation.RestController;
+ * 
+ * import com.pcr.demo.repository.StudentService;
+ * 
+ * @RestController
+ * 
+ * @RequestMapping("/redis") public class RedisController {
+ * 
+ * @Autowired private StudentService studentService;
+ * 
+ * 
+ * //redis should be running // postman testdata //http://localhost:8080/redis
+ * //{ // "id": 14000, // "firstName" : "benjamin", // "lastName" : "green" //}
+ * //Spring Boot with Redis as Database and Cache | Redis Series Part2 (by
+ * Simple Programming)
+ * 
+ * @PostMapping public void saveStudentInformation(@RequestBody Student student)
+ * { studentService.save(student);
+ * System.out.println("studentService.save(student)"); }
+ * 
+ * 
+ * //redis should be running //testdata //http://localhost:8080/redis/14000
+ * 
+ * //cashing //store the data into the cash and then send the response //do
+ * cashing unless the result id is less than 1200
+ * //http://localhost:8080/redis/1199 ->gets the data from db
+ * //http://localhost:8080/redis/1201 ->gets the data from cash
+ * 
+ * @Cacheable(key="#id",value="students", unless="#result.id<1200")
+ * 
+ * @GetMapping(path="{id}") public Student fetchStudent(@PathVariable("id") long
+ * id) { System.out.println("studentService.find(id)"); return
+ * studentService.find(id); } }
+ */
