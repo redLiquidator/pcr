@@ -22,8 +22,8 @@ function getSelectionPosition_seq() {
   let nth = selection.focusOffset - 18;
   $("#base-upperstrand").html(selection.focusNode.data[selection.focusOffset]+'  ( '+nth+'th base)  '); 
   
-  let start = nth-1;
-      primerSeq = seq.substr(start-3,3);	
+  let start = nth-3;
+      primerSeq = seq.substr(start-1,3);	
   //get primer sequence
   console.log('primer for Upper Strand: index '+start+", "+primerSeq);  //substr(start, length)
 }
@@ -37,10 +37,14 @@ function getSelectionPosition_complementarySeq() {
   let nth = selection.focusOffset - 18;
   $("#base-lowerstrand").html(selection.focusNode.data[selection.focusOffset]+'  ( '+nth+'th base)  '); 
   
-  let start = nth-6;
-      c_primerSeq = complementarySeq.substr(start,3);	
+  let start = nth-8;
+      sub1 = complementarySeq.substr(start-1,1);	
+      sub2 = complementarySeq.substr(start-2,1);	
+      sub3 = complementarySeq.substr(start-3,1);	
+      c_primerSeq = sub1+ sub2+ sub3;
+  let start1 = start-3;    
   //get primer sequence
-  console.log('primer for Template Strand: index '+start+", "+c_primerSeq);  //substr(start, length)
+  console.log('primer for Complementary Strand: index '+start1+", "+c_primerSeq);  //substr(start, length)
 }
 
 //selector
