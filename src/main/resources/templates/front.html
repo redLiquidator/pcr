@@ -36,7 +36,7 @@
 		<div class="preparation">
 			<h3>preparation step</h3>
 			<p><button id="prep1">run</button> 1.create a sequence of dna. Enter the length of dna you want to get: 		
-			<input id="dLength" name="dLength" placeholder="ex.23" size="4" value="15"> </p>
+			<input id="dLength" name="dLength" placeholder="ex.23" size="4"> </p>
 			<p id="notice1">The following dna has been created now...</p>
 			<p id="prep1-result-one" class="prep1-result"></p>
 			<p id="prep1-result-another"></p>
@@ -52,11 +52,13 @@
 					<p>You clicked the base <span id="base-lowerstrand"></span> on Complementary Strand, as a starting point of the systhesis.
 					<p>Do you really want this base to be the starting point of extension?</p> 
 					<button id="yes">yes</button>
-					<button id="no">no</button></p>
+					<bucctton id="no">no</button></p>
 				</div>
 				<div id="prep2-subcontainer3-yes">
-					<p>We found an compatible primer <span></span> from our database as below</p>
-					<p id="primer-search-result"></p>
+					<p>We found compatible primers <span></span> from our database as below</p>
+					 -Template Strand side-<span id="primer-search-result"></span>
+					 <br>
+					 -Complementary Strand-<span id="primer_c-search-result"></span>
 					<p>now the system brings the polymerase enzyme & buffers...
 					<p>Preparation step completed. Run the pcr process</p> 
 				</div>
@@ -70,25 +72,33 @@
 		
 		<div class="pcr">
 			<h3>pcr process</h3>
-			<p><button id="pcr">run</button></p>
-			<p> 1.denaturation</p>
-			<p> 2.annealing</p>
-			<p> 3.extension</p>
+			<p>Enter how many cycles you want to execute and click run button 		
+			<input id="runTimes" name="runTimes" placeholder="ex.12" size="4"> </p>
+			<p><button id="pcr">run</button> 1.denaturation 2.annealing 3.extension</p>
+			
 		</div>
-		 
+		<div id="resultBoard">
+		 <p>-------Result Board-------</p>
+
+	     <p><strong>Total dna you earned: <span id="NumOfCopies"></span> copy(copies)<strong></p>
+	      <p><strong>Total cycle you executed: <span id="NumOfCycles"></span> cycles<strong></p>
+	     
+		
 		<div class="pcr-result">
-			<p>-------Result Board-------</p>
+		<!--dynamic html creation-->
+	
+		</div>
 		</div>
 		
 	</div>
 	
 	<div class="side">	
-	    <div class="login">
+	   <!-- <div class="login">
 			<h3>login info</h3>
 			<span>id</span>&nbsp
 			<span>logout</span>&nbsp
 			<span>signout</span>&nbsp
-		</div>
+		</div>-->
 		<br>	
 		<div class="now">
 			<h3>now</h3>

@@ -17,7 +17,11 @@ public interface PrimerRepository extends JpaRepository<Primer,Long>{
 	//jpql vs native query(sql)
 	//in below, pr is an aliase of primerEntity
 	//1 means the first parameter
-	//@Query("SELECT pr from primerEntity pr where pr.sequence like %?1%")
-	@Query("SELECT pr from primerEntity pr where pr.sequence like '%AGG%'")
-	public List<Primer> findBySubSequence(String primerSeq);
+	//u.username LIKE CONCAT('%',:username,'%')")
+	//@Query("SELECT pr from primerEntity pr where pr.sequence like '%CGA%'")
+	//@Query("SELECT pr from primerEntity pr where pr.sequence like '%:ps%'")
+	@Query("SELECT pr from primerEntity pr where pr.sequence like concat('%',:ps,'%')")
+	public List<Primer> findBySubSequence(@Param("ps") String primerSeq);
+
+	
 }
