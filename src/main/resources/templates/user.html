@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PCR</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" th:href="@{/style.css}" />
+
+	<title>PCR</title>
+
 </head>
 <body>
 
 <h3>user's mypage</h3>
-<p>your ongoing process</p>
 <p>your finished process</p>
+<span class="result" th:text="${pcrResult}"></span>
 
 </body>
+<script>
+const res =[[${pcrResult}]];
+
+console.log("res");
+console.log(res);
+</script>
 </html>

@@ -53,6 +53,12 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-data-redis</artifactId>
 	  	  </dependency>
+	  	    <dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-redis</artifactId>
+	  	  </dependency>
+	  	  
+	  	   <!--  connect to redis server --> 
 	  	  <dependency>
 		    <groupId>redis.clients</groupId>
 		    <artifactId>jedis</artifactId>
@@ -78,8 +84,21 @@
 		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
 		    <version>2.3.3.RELEASE</version>
 		</dependency>
-					  
-		  
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.20</version>
+			<scope>provided</scope>
+		</dependency>	
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework.security</groupId>
+		  <artifactId>spring-security-test</artifactId>
+		  <scope>test</scope>
+		</dependency>  
 	</dependencies>
 
 	<build>

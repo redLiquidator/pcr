@@ -41,10 +41,12 @@ DataSource dataSource;
                  .dataSource(dataSource);
     }
  //password hashing
- @Bean
- 	public PasswordEncoder getPasswordEncoder(){
-     return NoOpPasswordEncoder.getInstance();
- }
+	
+	  @Bean 
+	  public PasswordEncoder getPasswordEncoder(){ 
+		  return NoOpPasswordEncoder.getInstance(); 
+	  }
+	 
  
  protected void configure(HttpSecurity http) throws Exception {
 	//it will configure the mappings, what kind of mapping are allowed for what users
@@ -54,12 +56,12 @@ DataSource dataSource;
 	 http.csrf().disable()    //disable it if the application users did not use it from browsers.
 	 			.authorizeRequests()
 	 			//.antMatchers("/**").hasAnyRole()  //all the people can access all pages
-	 			//.antMatchers("/","static/css","static/js").permitAll()   //allow anybody access to these css&js files irrespective of spring security
+	 			.antMatchers("/","static/css","static/js").permitAll()   //allow anybody access to these css&js files irrespective of spring security
 	 			//.antMatchers("/**").hasRole("ADMIN")  //people who has user role can access all pages
-				//.antMatchers("/admin").hasRole("ADMIN")
-	 			//.antMatchers("/user").hasRole("USER")
-	 			//.antMatchers("/front").hasAnyRole("ADMIN","USER")
-	 			.antMatchers("/**").permitAll()	
+				.antMatchers("/admin").hasRole("ADMIN")
+	 			.antMatchers("/user").hasAnyRole("USER","ADMIN")
+	 			.antMatchers("/front").hasAnyRole("ADMIN","USER")
+	 			//.antMatchers("/**").permitAll()	
 	 			 .and().formLogin();
 	 
 	 http.headers().frameOptions().disable();  //enable h2 console access

@@ -47,7 +47,6 @@ function getSelectionPosition_complementarySeq() {
 	 
   let nth = selection.focusOffset - 18;
   
-  
       start = nth-8;
       sub1 = complementarySeq.substr(start-1,1);	
       sub2 = complementarySeq.substr(start-2,1);	
@@ -89,7 +88,31 @@ function sleep(milliseconds) {
   } while (currentDate - date < milliseconds);
 }
 
-
+//send pcr experiment result to PcrResultController
+function sendPcrResult(result){
+	//call PreparationController.primerSearch()
+	let param = {
+		"seq" : result.seq,
+	    "primerSeq" : result.primerSeq,
+		"complementarySeq" : result.complementarySeq,
+		"start_t" : result.start_t,
+		"c_primerSeq" : result.c_primerSeq,	
+		"product1_1" : result.product1_1,
+		"product1_2" : result.product1_2,
+		"product2_1" : result.product2_1,
+		"product2_2" : result.product2_2	 
+	}
+	
+	 $.get("/resultStoredToRedis", 
+				param, 
+				// 서버가 필요한 정보를 같이 보냄. 
+				function(data, status) { 
+					console.log('ajax request : ResultController.resultStoredToRedis()');
+					console.log(data);
+					console.log(status);
+					console.log(data.result);
+				} ); 
+	}
 
 //selector
 let prep1 = document.querySelector("#prep1");
@@ -175,9 +198,7 @@ yes.addEventListener("click", ()=>{
 						console.log(item.name+"  "+item.sequence);
 						$("#primer_c-search-result").html(item.name);
 						$("#primer_c-search-result").html("primer name : "+item.name+", primer sequence :"+item.sequence);
-					})
-					
-					
+					})	
 				} ); 
 	});
 	
@@ -317,10 +338,21 @@ pcr.addEventListener("click", ()=>{
    	//$(html).appendTo('.pcr-result');
 	$("#NumOfCopies").text(numOfCopies($('#runTimes').val()));
 	$("#NumOfCycles").text(	$('#runTimes').val());
-	NumOfCycles
 	//sleep(3000);
-
-});
-
 	
+	let result = {
+		"seq" : seq,
+	    "primerSeq" : primerSeq,
+		"complementarySeq" : complementarySeq,
+		"start_t" : start_t,
+		"c_primerSeq" : c_primerSeq,	
+		"product1_1" : product1_1,
+		"product1_2" : product1_2,
+		"product2_1" : product2_1,
+		"product2_2" : product2_2		
+	}
+	   
+	sendPcrResult(result);
+	
+});
 
