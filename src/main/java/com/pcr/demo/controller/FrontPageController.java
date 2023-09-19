@@ -1,6 +1,5 @@
 package com.pcr.demo.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -10,14 +9,11 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.pcr.demo.entity.PcrResult;
-import com.pcr.demo.model.User;
 
 @RestController
 public class FrontPageController {
