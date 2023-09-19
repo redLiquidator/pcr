@@ -9,6 +9,77 @@ h2 error: either pre-create it or allow remote database creation
 			-> refer to this url | https://beemiel.tistory.com/8
 spring security issue: after login(user: jinjoo), page is directed to localhost:8080	
 spring security issue: only one user info is registered into appication.properties
+----------------------------------------------------------------------------------------------
+PCR/Manpreet
+DNA replication
+PCR = simple kind of DNA replication
+In vivo:  naturally
+In vitro: in lab / 
+Nucleotides bases : G,C,A,T
+DNA: double stranded. Complementary to each other.
+ 3’GCATTAG5’
+
+Primer: short strand of dna. They are one strand? The shape is line?
+ 
+Number of copies…? 
+
+Primer is detached to One wire and help replication. Nucleotides are added…
+Oligo nucleotide/ deoxy nucleoties..
+Enzyme pick up the Nucleotides and create a copy of DNA strand..
+DNA polymeraze
+1.DNA template
+2.Primer : on stretch of oligo nucleotides( single strand)
+4.Polymerase enzyme(=taq polymeraze) : from thermophile(bacteria)
+Cytoplasm…in cell
+5. buffer: magnesium chloride, ..maintain ph stable during the process
+ 
+In pcr, primer is artificially synthesized. 
+Primer is also replicated in PCR
+ Primer will be added to DNA template
+Thermocycler(=pcr machine) …..we can set how many cycles…set temperature.
+1Denaturation: 94-95’c strand get stranded
+2Allealing:primer get attached to each strand . 50-60’c depends on primer 1min   G,C(triple bond..)
+Enzyme is attached to primer..enzyme only look at primer…wrong place doesn’t care..
+Chain alongation
+3extension : get additional strand	 4min
+…and the take them out and visualize using agros gel electrophoresis.
+Agros..
+Put in a buffer
+Concentration methods…pore sizes…
+1%-2% agros for performing agros gel electrophoresis.
+Melt agros gel by adding some buffer(powder) and heat it 
+Pour gel to Casting tray
+Solidify….take the comb out
+Inside of casting tray, there are Wells (comb shape)..
+Add Itidium bromide to the agros gel
+In the well, 
+Dna is negative charge…it moves to positive charge(anode)
+Loading die..
+One well: dna
+Other well: standard marker
+Cloning(we use in lab. Making copies) vs synthesis (making something)| 
+Vector….multiple copies
+transluminator
+
+Wash gell from …
+
+
+
+Real time PCR / take mRNA (->cDNA)
+RTPCR / covid…
+Nested PCR / two set of primers.. highly specific…
+Firstly amplified primers..secondly amplified …
+
+
+
+Weak antigen
+
+ 
+
+
+
+
+
 
 
 		
