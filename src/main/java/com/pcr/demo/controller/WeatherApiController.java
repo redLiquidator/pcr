@@ -22,7 +22,7 @@ public class WeatherApiController {
 
 	
 	private static String weather_url = "https://api.openweathermap.org/data/2.5/box/city?bbox=12,32,15,37,10&appid=b1b08db5119d69275c4239db34a973dc";
-	private static String todayWeather_url = "https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=b1b08db5119d69275c4239db34a973dc";
+	private static String todayWeather_url = "https://api.openweathermap.org/data/2.5/weather?q=Abbotsford&appid=b1b08db5119d69275c4239db34a973dc";
 	
 	@GetMapping("/weathers")
 	public Object getWeathers(){

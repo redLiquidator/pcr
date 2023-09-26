@@ -73,10 +73,10 @@ public class FrontPageController {
 			
 			//get user's pcr execution result
 			System.out.println("redisTemplate.opsForHash().values(KEY)"); 
-			List<PcrResult> pcrResult = redisTemplate.opsForHash().values(KEY); 
-			System.out.println(pcrResult.get(0));
+			//List<PcrResult> pcrResult = redisTemplate.opsForHash().values(KEY); 
+			//System.out.println(pcrResult.get(0));
 			ModelAndView mv = new ModelAndView("user.html");
-			mv.addObject("test", pcrResult);
+			//mv.addObject("test", pcrResult);
 			return mv;
 		}
 		

@@ -5,6 +5,14 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
      
    <!--  <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
             th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>-->
@@ -35,8 +43,8 @@
 <div class="container">	
 	<div class="main">
 		<div class="preparation">
-			<h3>preparation step</h3>
-			<p><button id="prep1">run</button> 1.create a sequence of dna. Enter the length of dna you want to get: 		
+			<h4><strong>preparation</strong></h4>
+			<p><button id="prep1"  class="btn btn-info">run</button> 1.create a sequence of dna. Enter the length of dna you want to get: 		
 			<input id="dLength" name="dLength" placeholder="ex.23" size="4"> </p>
 			<p id="notice1">The following dna has been created now...</p>
 			<p id="prep1-result-one" class="prep1-result"></p>
@@ -72,10 +80,10 @@
 
 		
 		<div class="pcr">
-			<h3>pcr process</h3>
+			<h4><strong>pcr process</strong></h4>
 			<p>Enter how many cycles you want to execute and click run button 		
 			<input id="runTimes" name="runTimes" placeholder="ex.12" size="4"> </p>
-			<p><button id="pcr">run</button> 1.denaturation 2.annealing 3.extension</p>
+			<p><button id="pcr" class="btn btn-info">run</button> 1.denaturation 2.annealing 3.extension</p>
 			
 		</div>
 		<div id="resultBoard">
@@ -94,27 +102,22 @@
 	</div>
 	
 	<div class="side">	
-	   <!-- <div class="login">
-			<h3>login info</h3>
-			<span>id</span>&nbsp
-			<span>logout</span>&nbsp
-			<span>signout</span>&nbsp
-		</div>-->
 		<br>	
+		
 		<div class="loginUser">
 			User <span style="color:#0B5345" th:text="${username}"></span> has logged in. 
 		</div>
 		<div class="now">
-			<h3>now</h3>
+			<h4>now</h4>
 			<span>temp</span>&nbsp<span class="now-value" th:text="${todayWeather.main.temp}"></span>
 			<span>weather</span>&nbsp<span class="now-value" th:text="${todayWeather.weather[0].description}"></span>
 			<span>city</span>&nbsp<span class="now-value" th:text="${todayWeather.name}"></span>
 		</div>
 		<br>
-		<div class="goto-page">
-			<a href="/admin">go to admin page</a>
-			
-			<a href="/user">go to user's mypage</a>
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default">admin</button>
+		  <button type="button" class="btn btn-default">user info</button>
+		  <button type="button" class="btn btn-default">logout</button>
 		</div>
 	</div>
 </div>		
